@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.test1.mapper.UserMapper">
+
+    <insert id="addUser">
+        insert into user(username, password) values (#{username}, #{password})
+    </insert>
+
+    <select id="queryUserByUsernameAndPassword" resultType="User">
+        select * from user where username = #{username} and password = #{password}
+    </select>
+
+    <select id="queryUserById" parameterType="Integer" resultType="User">
+        select * from user where id = #{id}
+    </select>
+
+    <select id="queryAllUser" resultType="User">
+        select * from user
+    </select>
+
+
+    <insert id="addUser1">
+        insert into user1(username, password,phone,email) values (#{username}, #{password}, #{phone}, #{email})
+    </insert>
+
+
+    <select id="queryAllNews" resultType="news">
+        select * from news
+    </select>
+
+
+    <select id="queryAll" resultType="mytable">
+        select * from mytable
+    </select>
+
+    <select id="queryAll1" resultType="mytable1">
+        select * from mytable1
+    </select>
+
+    <select id="queryAll2" resultType="biji">
+        select * from biji
+    </select>
+
+    <!--日志部分-->
+    <insert id="addrizhi">
+        insert into rizhi(img,a,span,a1,a2,a3) values (#{img},#{a},#{span},#{a1},#{a2},#{a3})
+    </insert>
+
+    <select id="queryAll3" resultType="rizhi">
+        select * from rizhi
+    </select>
+
+    <insert id="addzhuce">
+        insert into zhuce(username, password) values (#{username}, #{password})
+    </insert>
+
+    <select id="getData" resultType="zhuce">
+        select * from zhuce where username = #{username} and password = #{password}
+    </select>
+
+    <select id="queryAll4" resultType="health1">
+        select * from health1
+    </select>
+
+    <select id="queryAll5" resultType="health2">
+        select * from health2
+    </select>
+
+
+
+
+
+</mapper>
